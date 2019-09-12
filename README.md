@@ -2,6 +2,11 @@
 
 A final year project for UM students major in CPS.
 
+Group member:
+William
+Sam
+Daniel
+
 Supervision: 
 Prof. Simon FONG & Prof. Shirley SIU (University of Macau, Macau SAR) 
 
