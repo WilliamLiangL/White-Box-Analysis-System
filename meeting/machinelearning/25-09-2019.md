@@ -1,0 +1,22 @@
+time: 2019/09/25
+Attendances
+Supervisors: 
+Prof. Simon FONG
+Prof. Shirley SIU
+Group members:
+CHEANG WENG HEI, DANIEL
+LIANG LIHENG, William
+SONG HANBAI, SAM
+
+Finished items
+Nothing. This meeting is just the first meeting. We are still in the starting state of understanding the project's title and deciding that what we want to achieve in this project.
+
+Discussion
+At this meeting, our supervisors introduce the background information of our title. Also, they briefly tell me the goal of our project. It makes us more familiar with our project.
+In the machine leaning part, we need to make a decision that what model we use in the project. This decision is important. It may affect accuracy, efficiency, ... etc. Our supervisors suggest us that we do the research of different models in the following two weeks, such as Bayesian network, decision tree, ... etc. Compare them and make decision at the next meeting.
+
+Challenges
+To learn machine learning from the basic. Study about ML methods (Bayesian, association rule mining, decision tree)
+
+Schedule
+We plan to have second meeting after two weeks. Before this meeting, we will do the research of different models in two weeks. At the next meeting, we will discuss different models. Select the most suitable models for our final year project.
