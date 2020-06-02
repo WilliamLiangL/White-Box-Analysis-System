@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589858790577.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1928328958",
+    "id" : "AC53CC3E",
+    "lastKnownWriteTime" : 1590634320,
+    "last_content_update" : 1590634320861,
+    "path" : "C:/Users/danie/OneDrive/Umac_sem8/CISC4000 GRADUATION PROJECT/FYP/main.R",
+    "project_path" : "main.R",
+    "properties" : {
+        "cursorPosition" : "52,0",
+        "scrollLine" : "36"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
