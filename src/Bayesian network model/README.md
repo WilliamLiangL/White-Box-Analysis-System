@@ -8,7 +8,7 @@
 * Since it is a R program, please download R form https://www.r-project.org/.
 * This is developed based on R version 3.6.3, I suggest you use the same version.
 * Otherwise, I can't make sure that there will be errors in other versions.
-* For convenience, I also recommend that you use ide to run the program, you can download Rstudiofrom https://rstudio.com/.
+* For convenience, I also recommend that you use ide to run the program, you can download Rstudio from https://rstudio.com/.
 
 # Execution
 * This folder is already a project folder in Rstudio.
