@@ -4,16 +4,18 @@
 * Also, using machine learning results to find relationships in medical data.
 * Finally, it can output useful information for supporting visualization part.
 
-# Installation
+# RuoYi Environment Setting
 * Since it is based on a plat form called RuoYi, please download the original source code from https://gitee.com/y_project/RuoYi to start.
-* This is developed based on R version 3.6.3, I suggest you use the same version.
-* Otherwise, I can't make sure that there will be errors in other versions.
-* For convenience, I also recommend that you use ide to run the program, you can download Rstudio from https://rstudio.com/.
+* Unzip the file and open in IntelliJ or IDEAEclipse, make sure to select as Maven project.
+* Create database ry and import data script ry_20190215.sql, quartz.sql
+* Open and run 'com.ruoyi.RuoYiApplication.java'
+* Open the browser and enter: http://localhost:80 (default account admin/admin123)
+* If the login page can be displayed correctly and you can log in successfully, the menu and page display is normal, indicating that the environment has been successfully built
 
 # Execution
-* This folder is already a project folder in Rstudio.
-* Please download the whole folder, and click the FYP.Rproj file to open the project.
-* Then, open main.R file inside the project and execution the program.
+* After setting up the RuoYi, then run the carcinoma.sql, carcinoma_menu.sql, sys_dict_data.sql
+* Put the other 7 files on a appropriate place into the RuoYi project added from last part.
+* If the login page can be displayed correctly and you can log in successfully again, and the 'carcinoma' function is normal, indicating that the project has been successfully built
 
 # Contact information
 * William, LIANG LIHENG
