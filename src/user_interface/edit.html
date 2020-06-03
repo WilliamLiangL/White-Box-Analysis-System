@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改carcinoma检测')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-carcinoma-edit" th:object="${carcinoma}">
+            <input id="carcinomaId" name="carcinomaId" th:field="*{carcinomaId}"  type="hidden">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">alcoholism：</label>
+				<div class="col-sm-8">
+					<select name="alcoholism" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{alcoholism}" ></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">vh_amn：</label>
+				<div class="col-sm-8">
+					<select name="vh_amn" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{vh_amn}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hepatotoxic：</label>
+				<div class="col-sm-8">
+					<select name="hepatotoxic" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hepatotoxic}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">THepatitis：</label>
+				<div class="col-sm-8">
+					<select name="THepatitis" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{THepatitis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hospital：</label>
+				<div class="col-sm-8">
+					<select name="hospital" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hospital}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">surgery：</label>
+				<div class="col-sm-8">
+					<select name="surgery" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{surgery}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">gallstones：</label>
+				<div class="col-sm-8">
+					<select name="gallstones" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{gallstones}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">choledocholithotomy：</label>
+				<div class="col-sm-8">
+					<select name="choledocholithotomy" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{choledocholithotomy}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">injections：</label>
+				<div class="col-sm-8">
+					<select name="injections" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{injections}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">transfusion：</label>
+				<div class="col-sm-8">
+					<select name="transfusion" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{transfusion}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ChHepatitis：</label>
+				<div class="col-sm-8">
+					<select name="ChHepatitis" class="form-control m-b" th:with="type=${@dict.getType('ChHepatitis_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ChHepatitis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">sex：</label>
+				<div class="col-sm-8">
+					<select name="sex" class="form-control m-b" th:with="type=${@dict.getType('gender')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{sex}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">age：</label>
+				<div class="col-sm-8">
+					<select name="age" class="form-control m-b" th:with="type=${@dict.getType('age_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{age}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">PBC：</label>
+				<div class="col-sm-8">
+					<select name="PBC" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{PBC}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">fibrosis：</label>
+				<div class="col-sm-8">
+					<select name="fibrosis" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{fibrosis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">diabetes：</label>
+				<div class="col-sm-8">
+					<select name="diabetes" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{diabetes}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">obesity：</label>
+				<div class="col-sm-8">
+					<select name="obesity" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{obesity}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Steatosis：</label>
+				<div class="col-sm-8">
+					<select name="Steatosis" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{Steatosis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Cirrhosis：</label>
+				<div class="col-sm-8">
+					<select name="Cirrhosis" class="form-control m-b" th:with="type=${@dict.getType('Cirrhosis_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{Cirrhosis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Hyperbilirubinemia：</label>
+				<div class="col-sm-8">
+					<select name="Hyperbilirubinemia" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{Hyperbilirubinemia}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">triglycerides：</label>
+				<div class="col-sm-8">
+					<select name="triglycerides" class="form-control m-b" th:with="type=${@dict.getType('triglycerides_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{triglycerides}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">RHepatitis：</label>
+				<div class="col-sm-8">
+					<select name="RHepatitis" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{RHepatitis}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">fatigue：</label>
+				<div class="col-sm-8">
+					<select name="fatigue" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{fatigue}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">bilirubin：</label>
+				<div class="col-sm-8">
+					<select name="bilirubin" class="form-control m-b" th:with="type=${@dict.getType('bilirubin_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{bilirubin}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">itching：</label>
+				<div class="col-sm-8">
+					<select name="itching" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{itching}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">upper_pain：</label>
+				<div class="col-sm-8">
+					<select name="upper_pain" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{upper_pain}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">fat：</label>
+				<div class="col-sm-8">
+					<select name="fat" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{fat}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">pain_ruq：</label>
+				<div class="col-sm-8">
+					<select name="pain_ruq" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{pain_ruq}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">pressure_ruq：</label>
+				<div class="col-sm-8">
+					<select name="pressure_ruq" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{pressure_ruq}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">phosphatase：</label>
+				<div class="col-sm-8">
+					<select name="phosphatase" class="form-control m-b" th:with="type=${@dict.getType('phosphatase_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{phosphatase}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">skin：</label>
+				<div class="col-sm-8">
+					<select name="skin" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{skin}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ama：</label>
+				<div class="col-sm-8">
+					<select name="ama" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ama}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">le_cells：</label>
+				<div class="col-sm-8">
+					<select name="le_cells" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{le_cells}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">joints：</label>
+				<div class="col-sm-8">
+					<select name="joints" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{joints}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">pain：</label>
+				<div class="col-sm-8">
+					<select name="pain" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{pain}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">proteins：</label>
+				<div class="col-sm-8">
+					<select name="proteins" class="form-control m-b" th:with="type=${@dict.getType('proteins_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{proteins}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">edema：</label>
+				<div class="col-sm-8">
+					<select name="edema" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{edema}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">platelet：</label>
+				<div class="col-sm-8">
+					<select name="platelet" class="form-control m-b" th:with="type=${@dict.getType('platelet_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{platelet}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">inr：</label>
+				<div class="col-sm-8">
+					<select name="inr" class="form-control m-b" th:with="type=${@dict.getType('inr_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{inr}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">bleeding：</label>
+				<div class="col-sm-8">
+					<select name="bleeding" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{bleeding}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">flatulence：</label>
+				<div class="col-sm-8">
+					<select name="flatulence" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{flatulence}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">alcohol：</label>
+				<div class="col-sm-8">
+					<select name="alcohol" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{alcohol}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">encephalopathy：</label>
+				<div class="col-sm-8">
+					<select name="encephalopathy" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{encephalopathy}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">urea：</label>
+				<div class="col-sm-8">
+					<select name="urea" class="form-control m-b" th:with="type=${@dict.getType('urea_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{urea}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ascites：</label>
+				<div class="col-sm-8">
+					<select name="ascites" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ascites}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hepatomegaly：</label>
+				<div class="col-sm-8">
+					<select name="hepatomegaly" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hepatomegaly}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hepatalgia：</label>
+				<div class="col-sm-8">
+					<select name="hepatalgia" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hepatalgia}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">density：</label>
+				<div class="col-sm-8">
+					<select name="density" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{density}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ESR：</label>
+				<div class="col-sm-8">
+					<select name="ESR" class="form-control m-b" th:with="type=${@dict.getType('ESR_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ESR}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">alt：</label>
+				<div class="col-sm-8">
+					<select name="alt" class="form-control m-b" th:with="type=${@dict.getType('alt_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{alt}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ast：</label>
+				<div class="col-sm-8">
+					<select name="ast" class="form-control m-b" th:with="type=${@dict.getType('ast_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ast}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">amylase：</label>
+				<div class="col-sm-8">
+					<select name="amylase" class="form-control m-b" th:with="type=${@dict.getType('amylase_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{amylase}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">ggtp：</label>
+				<div class="col-sm-8">
+					<select name="ggtp" class="form-control m-b" th:with="type=${@dict.getType('ggtp_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{ggtp}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">cholesterol：</label>
+				<div class="col-sm-8">
+					<select name="cholesterol" class="form-control m-b" th:with="type=${@dict.getType('cholesterol_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{cholesterol}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hbsag：</label>
+				<div class="col-sm-8">
+					<select name="hbsag" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hbsag}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hbsag_anti：</label>
+				<div class="col-sm-8">
+					<select name="hbsag_anti" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hbsag_anti}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">anorexia：</label>
+				<div class="col-sm-8">
+					<select name="anorexia" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{anorexia}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">nausea：</label>
+				<div class="col-sm-8">
+					<select name="nausea" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{nausea}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">spleen：</label>
+				<div class="col-sm-8">
+					<select name="spleen" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{spleen}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">consciousness：</label>
+				<div class="col-sm-8">
+					<select name="consciousness" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{consciousness}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">spiders：</label>
+				<div class="col-sm-8">
+					<select name="spiders" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{spiders}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">jaundice：</label>
+				<div class="col-sm-8">
+					<select name="jaundice" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{jaundice}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">albumin：</label>
+				<div class="col-sm-8">
+					<select name="albumin" class="form-control m-b" th:with="type=${@dict.getType('albumin_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{albumin}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">edge：</label>
+				<div class="col-sm-8">
+					<select name="edge" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{edge}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">irregular_liver：</label>
+				<div class="col-sm-8">
+					<select name="irregular_liver" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{irregular_liver}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hbc_anti：</label>
+				<div class="col-sm-8">
+					<select name="hbc_anti" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hbc_anti}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hcv_anti：</label>
+				<div class="col-sm-8">
+					<select name="hcv_anti" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hcv_anti}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">palms：</label>
+				<div class="col-sm-8">
+					<select name="palms" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{palms}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">hbeag：</label>
+				<div class="col-sm-8">
+					<select name="hbeag" class="form-control m-b" th:with="type=${@dict.getType('present_status')}">
+						<option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}" th:field="*{hbeag}"></option>
+					</select>
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "system/carcinoma";
+		$("#form-carcinoma-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			},
+			focusCleanup: true
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-carcinoma-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

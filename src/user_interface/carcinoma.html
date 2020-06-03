@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<th:block th:include="include :: header('carcinoma检测列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse" style="display: none">
+				<form id="formId">
+					<div class="select-list">
+						<ul>
+							<li>
+								alcoholism：<input type="text" name="alcoholism"/>
+							</li>
+
+							<li>
+								vh_amn：<input type="text" name="vh_amn"/>
+							</li>
+
+							<li>
+								hepatotoxic：<input type="text" name="hepatotoxic"/>
+							</li>
+
+							<li>
+								THepatitis：<input type="text" name="thepatitis"/>
+							</li>
+
+							<li>
+								hospital：<input type="text" name="hospital"/>
+							</li>
+
+							<li>
+								surgery：<input type="text" name="surgery"/>
+							</li>
+
+							<li>
+								gallstones：<input type="text" name="gallstones"/>
+							</li>
+
+							<li>
+								choledocholithotomy：<input type="text" name="choledocholithotomy"/>
+							</li>
+
+							<li>
+								injections：<input type="text" name="injections"/>
+							</li>
+
+							<li>
+								transfusion：<input type="text" name="transfusion"/>
+							</li>
+
+							<li>
+								ChHepatitis：<input type="text" name="chHepatitis"/>
+							</li>
+
+							<li>
+								sex：<input type="text" name="sex"/>
+							</li>
+
+							<li>
+								age：<input type="text" name="age"/>
+							</li>
+
+							<li>
+								PBC：<input type="text" name="pbc"/>
+							</li>
+
+							<li>
+								fibrosis：<input type="text" name="fibrosis"/>
+							</li>
+
+							<li>
+								diabetes：<input type="text" name="diabetes"/>
+							</li>
+
+							<li>
+								obesity：<input type="text" name="obesity"/>
+							</li>
+
+							<li>
+								Steatosis：<input type="text" name="steatosis"/>
+							</li>
+
+							<li>
+								Cirrhosis：<input type="text" name="cirrhosis"/>
+							</li>
+
+							<li>
+								Hyperbilirubinemia：<input type="text" name="hyperbilirubinemia"/>
+							</li>
+
+							<li>
+								triglycerides：<input type="text" name="triglycerides"/>
+							</li>
+
+							<li>
+								RHepatitis：<input type="text" name="rhepatitis"/>
+							</li>
+
+							<li>
+								fatigue：<input type="text" name="fatigue"/>
+							</li>
+
+							<li>
+								bilirubin：<input type="text" name="bilirubin"/>
+							</li>
+
+							<li>
+								itching：<input type="text" name="itching"/>
+							</li>
+
+							<li>
+								upper_pain：<input type="text" name="upper_pain"/>
+							</li>
+
+							<li>
+								fat：<input type="text" name="fat"/>
+							</li>
+
+							<li>
+								pain_ruq：<input type="text" name="pain_ruq"/>
+							</li>
+
+							<li>
+								pressure_ruq：<input type="text" name="pressure_ruq"/>
+							</li>
+
+							<li>
+								phosphatase：<input type="text" name="phosphatase"/>
+							</li>
+
+							<li>
+								skin：<input type="text" name="skin"/>
+							</li>
+
+							<li>
+								ama：<input type="text" name="ama"/>
+							</li>
+
+							<li>
+								le_cells：<input type="text" name="le_cells"/>
+							</li>
+
+							<li>
+								joints：<input type="text" name="joints"/>
+							</li>
+
+							<li>
+								pain：<input type="text" name="pain"/>
+							</li>
+
+							<li>
+								proteins：<input type="text" name="proteins"/>
+							</li>
+
+							<li>
+								edema：<input type="text" name="edema"/>
+							</li>
+
+							<li>
+								platelet：<input type="text" name="platelet"/>
+							</li>
+
+							<li>
+								inr：<input type="text" name="inr"/>
+							</li>
+
+							<li>
+								bleeding：<input type="text" name="bleeding"/>
+							</li>
+
+							<li>
+								flatulence：<input type="text" name="flatulence"/>
+							</li>
+
+							<li>
+								alcohol：<input type="text" name="alcohol"/>
+							</li>
+
+							<li>
+								encephalopathy：<input type="text" name="encephalopathy"/>
+							</li>
+
+							<li>
+								urea：<input type="text" name="urea"/>
+							</li>
+
+							<li>
+								ascites：<input type="text" name="ascites"/>
+							</li>
+
+							<li>
+								hepatomegaly：<input type="text" name="hepatomegaly"/>
+							</li>
+
+							<li>
+								hepatalgia：<input type="text" name="hepatalgia"/>
+							</li>
+
+							<li>
+								density：<input type="text" name="density"/>
+							</li>
+
+							<li>
+								ESR：<input type="text" name="esr"/>
+							</li>
+
+							<li>
+								alt：<input type="text" name="alt"/>
+							</li>
+
+							<li>
+								ast：<input type="text" name="ast"/>
+							</li>
+
+							<li>
+								amylase：<input type="text" name="amylase"/>
+							</li>
+
+							<li>
+								ggtp：<input type="text" name="ggtp"/>
+							</li>
+
+							<li>
+								cholesterol：<input type="text" name="cholesterol"/>
+							</li>
+
+							<li>
+								hbsag：<input type="text" name="hbsag"/>
+							</li>
+
+							<li>
+								hbsag_anti：<input type="text" name="hbsag_anti"/>
+							</li>
+
+							<li>
+								anorexia：<input type="text" name="anorexia"/>
+							</li>
+
+							<li>
+								nausea：<input type="text" name="nausea"/>
+							</li>
+
+							<li>
+								spleen：<input type="text" name="spleen"/>
+							</li>
+
+							<li>
+								consciousness：<input type="text" name="consciousness"/>
+							</li>
+
+							<li>
+								spiders：<input type="text" name="spiders"/>
+							</li>
+
+							<li>
+								jaundice：<input type="text" name="jaundice"/>
+							</li>
+
+							<li>
+								albumin：<input type="text" name="albumin"/>
+							</li>
+
+							<li>
+								edge：<input type="text" name="edge"/>
+							</li>
+
+							<li>
+								irregular_liver：<input type="text" name="irregular_liver"/>
+							</li>
+
+							<li>
+								hbc_anti：<input type="text" name="hbc_anti"/>
+							</li>
+
+							<li>
+								hcv_anti：<input type="text" name="hcv_anti"/>
+							</li>
+
+							<li>
+								palms：<input type="text" name="palms"/>
+							</li>
+
+							<li>
+								hbeag：<input type="text" name="hbeag"/>
+							</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+			
+	        <div class="btn-group-sm" id="toolbar" role="group">
+				<a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:carcinoma:add">
+					<i class="fa fa-plus"></i> 添加
+				</a>
+				<a class="btn btn-primary btn-edit disabled" onclick="$.operate.edit()" shiro:hasPermission="system:carcinoma:edit">
+					<i class="fa fa-edit"></i> 修改
+				</a>
+				<a class="btn btn-danger btn-del disabled" onclick="$.operate.removeAll()" shiro:hasPermission="system:carcinoma:remove">
+					<i class="fa fa-remove"></i> 删除
+				</a>
+				<a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="system:carcinoma:export">
+						<i class="fa fa-download"></i> 导出
+				 </a>
+			</div>
+			<div class="col-sm-12 select-table table-striped">
+				<table id="bootstrap-table" data-mobile-responsive="true"></table>
+			</div>
+		</div>
+	</div>
+    <div th:include="include :: footer"></div>
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('system:carcinoma:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('system:carcinoma:remove')}]];
+        var prefix = ctx + "system/carcinoma";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+				exportUrl: prefix + "/export",
+                modalName: "carcinoma检测",
+		        showExport: true,
+                columns: [{
+		            checkbox: true
+		        },
+				{
+					field : 'carcinomaId', 
+					title : 'id',
+					visible: false
+				},
+				{
+					field : 'alcoholism', 
+					title : 'alcoholism',
+					sortable: true
+				},
+				{
+					field : 'vh_amn',
+					title : 'vh_amn',
+					sortable: true
+				},
+				{
+					field : 'hepatotoxic',
+					title : 'hepatotoxic',
+					sortable: true
+				},
+				{
+					field : 'thepatitis',
+					title : 'THepatitis',
+					sortable: true
+				},
+				{
+					field : 'hospital', 
+					title : 'hospital',
+					sortable: true
+				},
+				{
+					field : 'surgery',
+					title : 'surgery',
+					sortable: true
+				},
+				{
+					field : 'gallstones', 
+					title : 'gallstones',
+					sortable: true
+				},
+				{
+					field : 'choledocholithotomy', 
+					title : 'choledocholithotomy',
+					sortable: true
+				},
+				{
+					field : 'injections', 
+					title : 'injections',
+					sortable: true
+				},
+				{
+					field : 'transfusion', 
+					title : 'transfusion',
+					sortable: true
+				},
+				{
+					field : 'chHepatitis',
+					title : 'ChHepatitis',
+					sortable: true
+				},
+				{
+					field : 'sex', 
+					title : 'sex',
+					sortable: true
+				},
+				{
+					field : 'age', 
+					title : 'age',
+					sortable: true
+				},
+				{
+					field : 'pbc',
+					title : 'PBC',
+					sortable: true
+				},
+				{
+					field : 'fibrosis', 
+					title : 'fibrosis',
+					sortable: true
+				},
+				{
+					field : 'diabetes', 
+					title : 'diabetes',
+					sortable: true
+				},
+				{
+					field : 'obesity', 
+					title : 'obesity',
+					sortable: true
+				},
+				{
+					field : 'steatosis',
+					title : 'Steatosis',
+					sortable: true
+				},
+				{
+					field : 'cirrhosis',
+					title : 'Cirrhosis',
+					sortable: true
+				},
+				{
+					field : 'hyperbilirubinemia',
+					title : 'Hyperbilirubinemia',
+					sortable: true
+				},
+				{
+					field : 'triglycerides', 
+					title : 'triglycerides',
+					sortable: true
+				},
+				{
+					field : 'rhepatitis',
+					title : 'RHepatitis',
+					sortable: true
+				},
+				{
+					field : 'fatigue', 
+					title : 'fatigue',
+					sortable: true
+				},
+				{
+					field : 'bilirubin', 
+					title : 'bilirubin',
+					sortable: true
+				},
+				{
+					field : 'itching', 
+					title : 'itching',
+					sortable: true
+				},
+				{
+					field : 'upper_pain',
+					title : 'upper_pain',
+					sortable: true
+				},
+				{
+					field : 'fat', 
+					title : 'fat',
+					sortable: true
+				},
+				{
+					field : 'pain_ruq',
+					title : 'pain_ruq',
+					sortable: true
+				},
+				{
+					field : 'pressure_ruq',
+					title : 'pressure_ruq',
+					sortable: true
+				},
+				{
+					field : 'phosphatase', 
+					title : 'phosphatase',
+					sortable: true
+				},
+				{
+					field : 'skin', 
+					title : 'skin',
+					sortable: true
+				},
+				{
+					field : 'ama', 
+					title : 'ama',
+					sortable: true
+				},
+				{
+					field : 'le_cells',
+					title : 'le_cells',
+					sortable: true
+				},
+				{
+					field : 'joints', 
+					title : 'joints',
+					sortable: true
+				},
+				{
+					field : 'pain', 
+					title : 'pain',
+					sortable: true
+				},
+				{
+					field : 'proteins', 
+					title : 'proteins',
+					sortable: true
+				},
+				{
+					field : 'edema',
+					title : 'edema',
+					sortable: true
+				},
+				{
+					field : 'platelet', 
+					title : 'platelet',
+					sortable: true
+				},
+				{
+					field : 'inr', 
+					title : 'inr',
+					sortable: true
+				},
+				{
+					field : 'bleeding', 
+					title : 'bleeding',
+					sortable: true
+				},
+				{
+					field : 'flatulence', 
+					title : 'flatulence',
+					sortable: true
+				},
+				{
+					field : 'alcohol', 
+					title : 'alcohol',
+					sortable: true
+				},
+				{
+					field : 'encephalopathy', 
+					title : 'encephalopathy',
+					sortable: true
+				},
+				{
+					field : 'urea', 
+					title : 'urea',
+					sortable: true
+				},
+				{
+					field : 'ascites', 
+					title : 'ascites',
+					sortable: true
+				},
+				{
+					field : 'hepatomegaly', 
+					title : 'hepatomegaly',
+					sortable: true
+				},
+				{
+					field : 'hepatalgia', 
+					title : 'hepatalgia',
+					sortable: true
+				},
+				{
+					field : 'density', 
+					title : 'density',
+					sortable: true
+				},
+				{
+					field : 'esr',
+					title : 'ESR',
+					sortable: true
+				},
+				{
+					field : 'alt', 
+					title : 'alt',
+					sortable: true
+				},
+				{
+					field : 'ast', 
+					title : 'ast',
+					sortable: true
+				},
+				{
+					field : 'amylase', 
+					title : 'amylase',
+					sortable: true
+				},
+				{
+					field : 'ggtp', 
+					title : 'ggtp',
+					sortable: true
+				},
+				{
+					field : 'cholesterol', 
+					title : 'cholesterol',
+					sortable: true
+				},
+				{
+					field : 'hbsag', 
+					title : 'hbsag',
+					sortable: true
+				},
+				{
+					field : 'hbsag_anti',
+					title : 'hbsag_anti',
+					sortable: true
+				},
+				{
+					field : 'anorexia', 
+					title : 'anorexia',
+					sortable: true
+				},
+				{
+					field : 'nausea', 
+					title : 'nausea',
+					sortable: true
+				},
+				{
+					field : 'spleen', 
+					title : 'spleen',
+					sortable: true
+				},
+				{
+					field : 'consciousness', 
+					title : 'consciousness',
+					sortable: true
+				},
+				{
+					field : 'spiders', 
+					title : 'spiders',
+					sortable: true
+				},
+				{
+					field : 'jaundice', 
+					title : 'jaundice',
+					sortable: true
+				},
+				{
+					field : 'albumin', 
+					title : 'albumin',
+					sortable: true
+				},
+				{
+					field : 'edge', 
+					title : 'edge',
+					sortable: true
+				},
+				{
+					field : 'irregular_liver',
+					title : 'irregular_liver',
+					sortable: true
+				},
+				{
+					field : 'hbc_anti',
+					title : 'hbc_anti',
+					sortable: true
+				},
+				{
+					field : 'hcv_anti',
+					title : 'hcv_anti',
+					sortable: true
+				},
+				{
+					field : 'palms', 
+					title : 'palms',
+					sortable: true
+				},
+				{
+					field : 'hbeag', 
+					title : 'hbeag',
+					sortable: true
+				},
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		            	var actions = [];
+		            	actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.carcinomaId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.carcinomaId + '\')"><i class="fa fa-remove"></i>删除</a>');
+						return actions.join('');
+		            }
+		        }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

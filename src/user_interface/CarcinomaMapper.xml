@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CarcinomaMapper">
+    
+    <resultMap type="Carcinoma" id="CarcinomaResult">
+        <result property="carcinomaId"    column="carcinoma_id"    />
+        <result property="alcoholism"    column="alcoholism"    />
+        <result property="vh_amn"    column="vh_amn"    />
+        <result property="hepatotoxic"    column="hepatotoxic"    />
+        <result property="THepatitis"    column="THepatitis"    />
+        <result property="hospital"    column="hospital"    />
+        <result property="surgery"    column="surgery"    />
+        <result property="gallstones"    column="gallstones"    />
+        <result property="choledocholithotomy"    column="choledocholithotomy"    />
+        <result property="injections"    column="injections"    />
+        <result property="transfusion"    column="transfusion"    />
+        <result property="ChHepatitis"    column="ChHepatitis"    />
+        <result property="sex"    column="sex"    />
+        <result property="age"    column="age"    />
+        <result property="PBC"    column="PBC"    />
+        <result property="fibrosis"    column="fibrosis"    />
+        <result property="diabetes"    column="diabetes"    />
+        <result property="obesity"    column="obesity"    />
+        <result property="Steatosis"    column="Steatosis"    />
+        <result property="Cirrhosis"    column="Cirrhosis"    />
+        <result property="Hyperbilirubinemia"    column="Hyperbilirubinemia"    />
+        <result property="triglycerides"    column="triglycerides"    />
+        <result property="RHepatitis"    column="RHepatitis"    />
+        <result property="fatigue"    column="fatigue"    />
+        <result property="bilirubin"    column="bilirubin"    />
+        <result property="itching"    column="itching"    />
+        <result property="upper_pain"    column="upper_pain"    />
+        <result property="fat"    column="fat"    />
+        <result property="pain_ruq"    column="pain_ruq"    />
+        <result property="pressure_ruq"    column="pressure_ruq"    />
+        <result property="phosphatase"    column="phosphatase"    />
+        <result property="skin"    column="skin"    />
+        <result property="ama"    column="ama"    />
+        <result property="le_cells"    column="le_cells"    />
+        <result property="joints"    column="joints"    />
+        <result property="pain"    column="pain"    />
+        <result property="proteins"    column="proteins"    />
+        <result property="edema"    column="edema"    />
+        <result property="platelet"    column="platelet"    />
+        <result property="inr"    column="inr"    />
+        <result property="bleeding"    column="bleeding"    />
+        <result property="flatulence"    column="flatulence"    />
+        <result property="alcohol"    column="alcohol"    />
+        <result property="encephalopathy"    column="encephalopathy"    />
+        <result property="urea"    column="urea"    />
+        <result property="ascites"    column="ascites"    />
+        <result property="hepatomegaly"    column="hepatomegaly"    />
+        <result property="hepatalgia"    column="hepatalgia"    />
+        <result property="density"    column="density"    />
+        <result property="ESR"    column="ESR"    />
+        <result property="alt"    column="alt"    />
+        <result property="ast"    column="ast"    />
+        <result property="amylase"    column="amylase"    />
+        <result property="ggtp"    column="ggtp"    />
+        <result property="cholesterol"    column="cholesterol"    />
+        <result property="hbsag"    column="hbsag"    />
+        <result property="hbsag_anti"    column="hbsag_anti"    />
+        <result property="anorexia"    column="anorexia"    />
+        <result property="nausea"    column="nausea"    />
+        <result property="spleen"    column="spleen"    />
+        <result property="consciousness"    column="consciousness"    />
+        <result property="spiders"    column="spiders"    />
+        <result property="jaundice"    column="jaundice"    />
+        <result property="albumin"    column="albumin"    />
+        <result property="edge"    column="edge"    />
+        <result property="irregular_liver"    column="irregular_liver"    />
+        <result property="hbc_anti"    column="hbc_anti"    />
+        <result property="hcv_anti"    column="hcv_anti"    />
+        <result property="palms"    column="palms"    />
+        <result property="hbeag"    column="hbeag"    />
+    </resultMap>
+	
+	<sql id="selectCarcinomaVo">
+        select carcinoma_id, alcoholism, vh_amn, hepatotoxic, THepatitis, hospital, surgery, gallstones, choledocholithotomy, injections, transfusion, ChHepatitis, sex, age, PBC, fibrosis, diabetes, obesity, Steatosis, Cirrhosis, Hyperbilirubinemia, triglycerides, RHepatitis, fatigue, bilirubin, itching, upper_pain, fat, pain_ruq, pressure_ruq, phosphatase, skin, ama, le_cells, joints, pain, proteins, edema, platelet, inr, bleeding, flatulence, alcohol, encephalopathy, urea, ascites, hepatomegaly, hepatalgia, density, ESR, alt, ast, amylase, ggtp, cholesterol, hbsag, hbsag_anti, anorexia, nausea, spleen, consciousness, spiders, jaundice, albumin, edge, irregular_liver, hbc_anti, hcv_anti, palms, hbeag from sys_carcinoma
+    </sql>
+	
+    <select id="selectCarcinomaList" parameterType="Carcinoma" resultMap="CarcinomaResult">
+        <include refid="selectCarcinomaVo"/>
+        <where>  
+            <if test="carcinomaId != null "> and carcinoma_id = #{carcinomaId}</if>
+             <if test="alcoholism != null  and alcoholism != '' "> and alcoholism = #{alcoholism}</if>
+             <if test="vh_amn != null  and vh_amn != '' "> and vh_amn = #{vh_amn}</if>
+             <if test="hepatotoxic != null  and hepatotoxic != '' "> and hepatotoxic = #{hepatotoxic}</if>
+             <if test="THepatitis != null  and THepatitis != '' "> and THepatitis = #{THepatitis}</if>
+             <if test="hospital != null  and hospital != '' "> and hospital = #{hospital}</if>
+             <if test="surgery != null  and surgery != '' "> and surgery = #{surgery}</if>
+             <if test="gallstones != null  and gallstones != '' "> and gallstones = #{gallstones}</if>
+             <if test="choledocholithotomy != null  and choledocholithotomy != '' "> and choledocholithotomy = #{choledocholithotomy}</if>
+             <if test="injections != null  and injections != '' "> and injections = #{injections}</if>
+             <if test="transfusion != null  and transfusion != '' "> and transfusion = #{transfusion}</if>
+             <if test="ChHepatitis != null  and ChHepatitis != '' "> and ChHepatitis = #{ChHepatitis}</if>
+             <if test="sex != null  and sex != '' "> and sex = #{sex}</if>
+             <if test="age != null  and age != '' "> and age = #{age}</if>
+             <if test="PBC != null  and PBC != '' "> and PBC = #{PBC}</if>
+             <if test="fibrosis != null  and fibrosis != '' "> and fibrosis = #{fibrosis}</if>
+             <if test="diabetes != null  and diabetes != '' "> and diabetes = #{diabetes}</if>
+             <if test="obesity != null  and obesity != '' "> and obesity = #{obesity}</if>
+             <if test="Steatosis != null  and Steatosis != '' "> and Steatosis = #{Steatosis}</if>
+             <if test="Cirrhosis != null  and Cirrhosis != '' "> and Cirrhosis = #{Cirrhosis}</if>
+             <if test="Hyperbilirubinemia != null  and Hyperbilirubinemia != '' "> and Hyperbilirubinemia = #{Hyperbilirubinemia}</if>
+             <if test="triglycerides != null  and triglycerides != '' "> and triglycerides = #{triglycerides}</if>
+             <if test="RHepatitis != null  and RHepatitis != '' "> and RHepatitis = #{RHepatitis}</if>
+             <if test="fatigue != null  and fatigue != '' "> and fatigue = #{fatigue}</if>
+             <if test="bilirubin != null  and bilirubin != '' "> and bilirubin = #{bilirubin}</if>
+             <if test="itching != null  and itching != '' "> and itching = #{itching}</if>
+             <if test="upper_pain != null  and upper_pain != '' "> and upper_pain = #{upper_pain}</if>
+             <if test="fat != null  and fat != '' "> and fat = #{fat}</if>
+             <if test="pain_ruq != null  and pain_ruq != '' "> and pain_ruq = #{pain_ruq}</if>
+             <if test="pressure_ruq != null  and pressure_ruq != '' "> and pressure_ruq = #{pressure_ruq}</if>
+             <if test="phosphatase != null  and phosphatase != '' "> and phosphatase = #{phosphatase}</if>
+             <if test="skin != null  and skin != '' "> and skin = #{skin}</if>
+             <if test="ama != null  and ama != '' "> and ama = #{ama}</if>
+             <if test="le_cells != null  and le_cells != '' "> and le_cells = #{le_cells}</if>
+             <if test="joints != null  and joints != '' "> and joints = #{joints}</if>
+             <if test="pain != null  and pain != '' "> and pain = #{pain}</if>
+             <if test="proteins != null  and proteins != '' "> and proteins = #{proteins}</if>
+             <if test="edema != null  and edema != '' "> and edema = #{edema}</if>
+             <if test="platelet != null  and platelet != '' "> and platelet = #{platelet}</if>
+             <if test="inr != null  and inr != '' "> and inr = #{inr}</if>
+             <if test="bleeding != null  and bleeding != '' "> and bleeding = #{bleeding}</if>
+             <if test="flatulence != null  and flatulence != '' "> and flatulence = #{flatulence}</if>
+             <if test="alcohol != null  and alcohol != '' "> and alcohol = #{alcohol}</if>
+             <if test="encephalopathy != null  and encephalopathy != '' "> and encephalopathy = #{encephalopathy}</if>
+             <if test="urea != null  and urea != '' "> and urea = #{urea}</if>
+             <if test="ascites != null  and ascites != '' "> and ascites = #{ascites}</if>
+             <if test="hepatomegaly != null  and hepatomegaly != '' "> and hepatomegaly = #{hepatomegaly}</if>
+             <if test="hepatalgia != null  and hepatalgia != '' "> and hepatalgia = #{hepatalgia}</if>
+             <if test="density != null  and density != '' "> and density = #{density}</if>
+             <if test="ESR != null  and ESR != '' "> and ESR = #{ESR}</if>
+             <if test="alt != null  and alt != '' "> and alt = #{alt}</if>
+             <if test="ast != null  and ast != '' "> and ast = #{ast}</if>
+             <if test="amylase != null  and amylase != '' "> and amylase = #{amylase}</if>
+             <if test="ggtp != null  and ggtp != '' "> and ggtp = #{ggtp}</if>
+             <if test="cholesterol != null  and cholesterol != '' "> and cholesterol = #{cholesterol}</if>
+             <if test="hbsag != null  and hbsag != '' "> and hbsag = #{hbsag}</if>
+             <if test="hbsag_anti != null  and hbsag_anti != '' "> and hbsag_anti = #{hbsag_anti}</if>
+             <if test="anorexia != null  and anorexia != '' "> and anorexia = #{anorexia}</if>
+             <if test="nausea != null  and nausea != '' "> and nausea = #{nausea}</if>
+             <if test="spleen != null  and spleen != '' "> and spleen = #{spleen}</if>
+             <if test="consciousness != null  and consciousness != '' "> and consciousness = #{consciousness}</if>
+             <if test="spiders != null  and spiders != '' "> and spiders = #{spiders}</if>
+             <if test="jaundice != null  and jaundice != '' "> and jaundice = #{jaundice}</if>
+             <if test="albumin != null  and albumin != '' "> and albumin = #{albumin}</if>
+             <if test="edge != null  and edge != '' "> and edge = #{edge}</if>
+             <if test="irregular_liver != null  and irregular_liver != '' "> and irregular_liver = #{irregular_liver}</if>
+             <if test="hbc_anti != null  and hbc_anti != '' "> and hbc_anti = #{hbc_anti}</if>
+             <if test="hcv_anti != null  and hcv_anti != '' "> and hcv_anti = #{hcv_anti}</if>
+             <if test="palms != null  and palms != '' "> and palms = #{palms}</if>
+             <if test="hbeag != null  and hbeag != '' "> and hbeag = #{hbeag}</if>
+         </where>
+    </select>
+    
+    <select id="selectCarcinomaById" parameterType="Integer" resultMap="CarcinomaResult">
+        <include refid="selectCarcinomaVo"/>
+        where carcinoma_id = #{carcinomaId}
+    </select>
+        
+    <insert id="insertCarcinoma" parameterType="Carcinoma" useGeneratedKeys="true" keyProperty="carcinomaId">
+        insert into sys_carcinoma
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="alcoholism != null  and alcoholism != ''  ">alcoholism,</if>
+			<if test="vh_amn != null  and vh_amn != ''  ">vh_amn,</if>
+			<if test="hepatotoxic != null  and hepatotoxic != ''  ">hepatotoxic,</if>
+			<if test="THepatitis != null  and THepatitis != ''  ">THepatitis,</if>
+			<if test="hospital != null  and hospital != ''  ">hospital,</if>
+			<if test="surgery != null  and surgery != ''  ">surgery,</if>
+			<if test="gallstones != null  and gallstones != ''  ">gallstones,</if>
+			<if test="choledocholithotomy != null  and choledocholithotomy != ''  ">choledocholithotomy,</if>
+			<if test="injections != null  and injections != ''  ">injections,</if>
+			<if test="transfusion != null  and transfusion != ''  ">transfusion,</if>
+			<if test="ChHepatitis != null  and ChHepatitis != ''  ">ChHepatitis,</if>
+			<if test="sex != null  and sex != ''  ">sex,</if>
+			<if test="age != null  and age != ''  ">age,</if>
+			<if test="PBC != null  and PBC != ''  ">PBC,</if>
+			<if test="fibrosis != null  and fibrosis != ''  ">fibrosis,</if>
+			<if test="diabetes != null  and diabetes != ''  ">diabetes,</if>
+			<if test="obesity != null  and obesity != ''  ">obesity,</if>
+			<if test="Steatosis != null  and Steatosis != ''  ">Steatosis,</if>
+			<if test="Cirrhosis != null  and Cirrhosis != ''  ">Cirrhosis,</if>
+			<if test="Hyperbilirubinemia != null  and Hyperbilirubinemia != ''  ">Hyperbilirubinemia,</if>
+			<if test="triglycerides != null  and triglycerides != ''  ">triglycerides,</if>
+			<if test="RHepatitis != null  and RHepatitis != ''  ">RHepatitis,</if>
+			<if test="fatigue != null  and fatigue != ''  ">fatigue,</if>
+			<if test="bilirubin != null  and bilirubin != ''  ">bilirubin,</if>
+			<if test="itching != null  and itching != ''  ">itching,</if>
+			<if test="upper_pain != null  and upper_pain != ''  ">upper_pain,</if>
+			<if test="fat != null  and fat != ''  ">fat,</if>
+			<if test="pain_ruq != null  and pain_ruq != ''  ">pain_ruq,</if>
+			<if test="pressure_ruq != null  and pressure_ruq != ''  ">pressure_ruq,</if>
+			<if test="phosphatase != null  and phosphatase != ''  ">phosphatase,</if>
+			<if test="skin != null  and skin != ''  ">skin,</if>
+			<if test="ama != null  and ama != ''  ">ama,</if>
+			<if test="le_cells != null  and le_cells != ''  ">le_cells,</if>
+			<if test="joints != null  and joints != ''  ">joints,</if>
+			<if test="pain != null  and pain != ''  ">pain,</if>
+			<if test="proteins != null  and proteins != ''  ">proteins,</if>
+			<if test="edema != null  and edema != ''  ">edema,</if>
+			<if test="platelet != null  and platelet != ''  ">platelet,</if>
+			<if test="inr != null  and inr != ''  ">inr,</if>
+			<if test="bleeding != null  and bleeding != ''  ">bleeding,</if>
+			<if test="flatulence != null  and flatulence != ''  ">flatulence,</if>
+			<if test="alcohol != null  and alcohol != ''  ">alcohol,</if>
+			<if test="encephalopathy != null  and encephalopathy != ''  ">encephalopathy,</if>
+			<if test="urea != null  and urea != ''  ">urea,</if>
+			<if test="ascites != null  and ascites != ''  ">ascites,</if>
+			<if test="hepatomegaly != null  and hepatomegaly != ''  ">hepatomegaly,</if>
+			<if test="hepatalgia != null  and hepatalgia != ''  ">hepatalgia,</if>
+			<if test="density != null  and density != ''  ">density,</if>
+			<if test="ESR != null  and ESR != ''  ">ESR,</if>
+			<if test="alt != null  and alt != ''  ">alt,</if>
+			<if test="ast != null  and ast != ''  ">ast,</if>
+			<if test="amylase != null  and amylase != ''  ">amylase,</if>
+			<if test="ggtp != null  and ggtp != ''  ">ggtp,</if>
+			<if test="cholesterol != null  and cholesterol != ''  ">cholesterol,</if>
+			<if test="hbsag != null  and hbsag != ''  ">hbsag,</if>
+			<if test="hbsag_anti != null  and hbsag_anti != ''  ">hbsag_anti,</if>
+			<if test="anorexia != null  and anorexia != ''  ">anorexia,</if>
+			<if test="nausea != null  and nausea != ''  ">nausea,</if>
+			<if test="spleen != null  and spleen != ''  ">spleen,</if>
+			<if test="consciousness != null  and consciousness != ''  ">consciousness,</if>
+			<if test="spiders != null  and spiders != ''  ">spiders,</if>
+			<if test="jaundice != null  and jaundice != ''  ">jaundice,</if>
+			<if test="albumin != null  and albumin != ''  ">albumin,</if>
+			<if test="edge != null  and edge != ''  ">edge,</if>
+			<if test="irregular_liver != null  and irregular_liver != ''  ">irregular_liver,</if>
+			<if test="hbc_anti != null  and hbc_anti != ''  ">hbc_anti,</if>
+			<if test="hcv_anti != null  and hcv_anti != ''  ">hcv_anti,</if>
+			<if test="palms != null  and palms != ''  ">palms,</if>
+			<if test="hbeag != null  and hbeag != ''  ">hbeag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="alcoholism != null  and alcoholism != ''  ">#{alcoholism},</if>
+			<if test="vh_amn != null  and vh_amn != ''  ">#{vh_amn},</if>
+			<if test="hepatotoxic != null  and hepatotoxic != ''  ">#{hepatotoxic},</if>
+			<if test="THepatitis != null  and THepatitis != ''  ">#{THepatitis},</if>
+			<if test="hospital != null  and hospital != ''  ">#{hospital},</if>
+			<if test="surgery != null  and surgery != ''  ">#{surgery},</if>
+			<if test="gallstones != null  and gallstones != ''  ">#{gallstones},</if>
+			<if test="choledocholithotomy != null  and choledocholithotomy != ''  ">#{choledocholithotomy},</if>
+			<if test="injections != null  and injections != ''  ">#{injections},</if>
+			<if test="transfusion != null  and transfusion != ''  ">#{transfusion},</if>
+			<if test="ChHepatitis != null  and ChHepatitis != ''  ">#{ChHepatitis},</if>
+			<if test="sex != null  and sex != ''  ">#{sex},</if>
+			<if test="age != null  and age != ''  ">#{age},</if>
+			<if test="PBC != null  and PBC != ''  ">#{PBC},</if>
+			<if test="fibrosis != null  and fibrosis != ''  ">#{fibrosis},</if>
+			<if test="diabetes != null  and diabetes != ''  ">#{diabetes},</if>
+			<if test="obesity != null  and obesity != ''  ">#{obesity},</if>
+			<if test="Steatosis != null  and Steatosis != ''  ">#{Steatosis},</if>
+			<if test="Cirrhosis != null  and Cirrhosis != ''  ">#{Cirrhosis},</if>
+			<if test="Hyperbilirubinemia != null  and Hyperbilirubinemia != ''  ">#{Hyperbilirubinemia},</if>
+			<if test="triglycerides != null  and triglycerides != ''  ">#{triglycerides},</if>
+			<if test="RHepatitis != null  and RHepatitis != ''  ">#{RHepatitis},</if>
+			<if test="fatigue != null  and fatigue != ''  ">#{fatigue},</if>
+			<if test="bilirubin != null  and bilirubin != ''  ">#{bilirubin},</if>
+			<if test="itching != null  and itching != ''  ">#{itching},</if>
+			<if test="upper_pain != null  and upper_pain != ''  ">#{upper_pain},</if>
+			<if test="fat != null  and fat != ''  ">#{fat},</if>
+			<if test="pain_ruq != null  and pain_ruq != ''  ">#{pain_ruq},</if>
+			<if test="pressure_ruq != null  and pressure_ruq != ''  ">#{pressure_ruq},</if>
+			<if test="phosphatase != null  and phosphatase != ''  ">#{phosphatase},</if>
+			<if test="skin != null  and skin != ''  ">#{skin},</if>
+			<if test="ama != null  and ama != ''  ">#{ama},</if>
+			<if test="le_cells != null  and le_cells != ''  ">#{le_cells},</if>
+			<if test="joints != null  and joints != ''  ">#{joints},</if>
+			<if test="pain != null  and pain != ''  ">#{pain},</if>
+			<if test="proteins != null  and proteins != ''  ">#{proteins},</if>
+			<if test="edema != null  and edema != ''  ">#{edema},</if>
+			<if test="platelet != null  and platelet != ''  ">#{platelet},</if>
+			<if test="inr != null  and inr != ''  ">#{inr},</if>
+			<if test="bleeding != null  and bleeding != ''  ">#{bleeding},</if>
+			<if test="flatulence != null  and flatulence != ''  ">#{flatulence},</if>
+			<if test="alcohol != null  and alcohol != ''  ">#{alcohol},</if>
+			<if test="encephalopathy != null  and encephalopathy != ''  ">#{encephalopathy},</if>
+			<if test="urea != null  and urea != ''  ">#{urea},</if>
+			<if test="ascites != null  and ascites != ''  ">#{ascites},</if>
+			<if test="hepatomegaly != null  and hepatomegaly != ''  ">#{hepatomegaly},</if>
+			<if test="hepatalgia != null  and hepatalgia != ''  ">#{hepatalgia},</if>
+			<if test="density != null  and density != ''  ">#{density},</if>
+			<if test="ESR != null  and ESR != ''  ">#{ESR},</if>
+			<if test="alt != null  and alt != ''  ">#{alt},</if>
+			<if test="ast != null  and ast != ''  ">#{ast},</if>
+			<if test="amylase != null  and amylase != ''  ">#{amylase},</if>
+			<if test="ggtp != null  and ggtp != ''  ">#{ggtp},</if>
+			<if test="cholesterol != null  and cholesterol != ''  ">#{cholesterol},</if>
+			<if test="hbsag != null  and hbsag != ''  ">#{hbsag},</if>
+			<if test="hbsag_anti != null  and hbsag_anti != ''  ">#{hbsag_anti},</if>
+			<if test="anorexia != null  and anorexia != ''  ">#{anorexia},</if>
+			<if test="nausea != null  and nausea != ''  ">#{nausea},</if>
+			<if test="spleen != null  and spleen != ''  ">#{spleen},</if>
+			<if test="consciousness != null  and consciousness != ''  ">#{consciousness},</if>
+			<if test="spiders != null  and spiders != ''  ">#{spiders},</if>
+			<if test="jaundice != null  and jaundice != ''  ">#{jaundice},</if>
+			<if test="albumin != null  and albumin != ''  ">#{albumin},</if>
+			<if test="edge != null  and edge != ''  ">#{edge},</if>
+			<if test="irregular_liver != null  and irregular_liver != ''  ">#{irregular_liver},</if>
+			<if test="hbc_anti != null  and hbc_anti != ''  ">#{hbc_anti},</if>
+			<if test="hcv_anti != null  and hcv_anti != ''  ">#{hcv_anti},</if>
+			<if test="palms != null  and palms != ''  ">#{palms},</if>
+			<if test="hbeag != null  and hbeag != ''  ">#{hbeag},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateCarcinoma" parameterType="Carcinoma">
+        update sys_carcinoma
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="alcoholism != null  and alcoholism != ''  ">alcoholism = #{alcoholism},</if>
+            <if test="vh_amn != null  and vh_amn != ''  ">vh_amn = #{vh_amn},</if>
+            <if test="hepatotoxic != null  and hepatotoxic != ''  ">hepatotoxic = #{hepatotoxic},</if>
+            <if test="THepatitis != null  and THepatitis != ''  ">THepatitis = #{THepatitis},</if>
+            <if test="hospital != null  and hospital != ''  ">hospital = #{hospital},</if>
+            <if test="surgery != null  and surgery != ''  ">surgery = #{surgery},</if>
+            <if test="gallstones != null  and gallstones != ''  ">gallstones = #{gallstones},</if>
+            <if test="choledocholithotomy != null  and choledocholithotomy != ''  ">choledocholithotomy = #{choledocholithotomy},</if>
+            <if test="injections != null  and injections != ''  ">injections = #{injections},</if>
+            <if test="transfusion != null  and transfusion != ''  ">transfusion = #{transfusion},</if>
+            <if test="ChHepatitis != null  and ChHepatitis != ''  ">ChHepatitis = #{ChHepatitis},</if>
+            <if test="sex != null  and sex != ''  ">sex = #{sex},</if>
+            <if test="age != null  and age != ''  ">age = #{age},</if>
+            <if test="PBC != null  and PBC != ''  ">PBC = #{PBC},</if>
+            <if test="fibrosis != null  and fibrosis != ''  ">fibrosis = #{fibrosis},</if>
+            <if test="diabetes != null  and diabetes != ''  ">diabetes = #{diabetes},</if>
+            <if test="obesity != null  and obesity != ''  ">obesity = #{obesity},</if>
+            <if test="Steatosis != null  and Steatosis != ''  ">Steatosis = #{Steatosis},</if>
+            <if test="Cirrhosis != null  and Cirrhosis != ''  ">Cirrhosis = #{Cirrhosis},</if>
+            <if test="Hyperbilirubinemia != null  and Hyperbilirubinemia != ''  ">Hyperbilirubinemia = #{Hyperbilirubinemia},</if>
+            <if test="triglycerides != null  and triglycerides != ''  ">triglycerides = #{triglycerides},</if>
+            <if test="RHepatitis != null  and RHepatitis != ''  ">RHepatitis = #{RHepatitis},</if>
+            <if test="fatigue != null  and fatigue != ''  ">fatigue = #{fatigue},</if>
+            <if test="bilirubin != null  and bilirubin != ''  ">bilirubin = #{bilirubin},</if>
+            <if test="itching != null  and itching != ''  ">itching = #{itching},</if>
+            <if test="upper_pain != null  and upper_pain != ''  ">upper_pain = #{upper_pain},</if>
+            <if test="fat != null  and fat != ''  ">fat = #{fat},</if>
+            <if test="pain_ruq != null  and pain_ruq != ''  ">pain_ruq = #{pain_ruq},</if>
+            <if test="pressure_ruq != null  and pressure_ruq != ''  ">pressure_ruq = #{pressure_ruq},</if>
+            <if test="phosphatase != null  and phosphatase != ''  ">phosphatase = #{phosphatase},</if>
+            <if test="skin != null  and skin != ''  ">skin = #{skin},</if>
+            <if test="ama != null  and ama != ''  ">ama = #{ama},</if>
+            <if test="le_cells != null  and le_cells != ''  ">le_cells = #{le_cells},</if>
+            <if test="joints != null  and joints != ''  ">joints = #{joints},</if>
+            <if test="pain != null  and pain != ''  ">pain = #{pain},</if>
+            <if test="proteins != null  and proteins != ''  ">proteins = #{proteins},</if>
+            <if test="edema != null  and edema != ''  ">edema = #{edema},</if>
+            <if test="platelet != null  and platelet != ''  ">platelet = #{platelet},</if>
+            <if test="inr != null  and inr != ''  ">inr = #{inr},</if>
+            <if test="bleeding != null  and bleeding != ''  ">bleeding = #{bleeding},</if>
+            <if test="flatulence != null  and flatulence != ''  ">flatulence = #{flatulence},</if>
+            <if test="alcohol != null  and alcohol != ''  ">alcohol = #{alcohol},</if>
+            <if test="encephalopathy != null  and encephalopathy != ''  ">encephalopathy = #{encephalopathy},</if>
+            <if test="urea != null  and urea != ''  ">urea = #{urea},</if>
+            <if test="ascites != null  and ascites != ''  ">ascites = #{ascites},</if>
+            <if test="hepatomegaly != null  and hepatomegaly != ''  ">hepatomegaly = #{hepatomegaly},</if>
+            <if test="hepatalgia != null  and hepatalgia != ''  ">hepatalgia = #{hepatalgia},</if>
+            <if test="density != null  and density != ''  ">density = #{density},</if>
+            <if test="ESR != null  and ESR != ''  ">ESR = #{ESR},</if>
+            <if test="alt != null  and alt != ''  ">alt = #{alt},</if>
+            <if test="ast != null  and ast != ''  ">ast = #{ast},</if>
+            <if test="amylase != null  and amylase != ''  ">amylase = #{amylase},</if>
+            <if test="ggtp != null  and ggtp != ''  ">ggtp = #{ggtp},</if>
+            <if test="cholesterol != null  and cholesterol != ''  ">cholesterol = #{cholesterol},</if>
+            <if test="hbsag != null  and hbsag != ''  ">hbsag = #{hbsag},</if>
+            <if test="hbsag_anti != null  and hbsag_anti != ''  ">hbsag_anti = #{hbsag_anti},</if>
+            <if test="anorexia != null  and anorexia != ''  ">anorexia = #{anorexia},</if>
+            <if test="nausea != null  and nausea != ''  ">nausea = #{nausea},</if>
+            <if test="spleen != null  and spleen != ''  ">spleen = #{spleen},</if>
+            <if test="consciousness != null  and consciousness != ''  ">consciousness = #{consciousness},</if>
+            <if test="spiders != null  and spiders != ''  ">spiders = #{spiders},</if>
+            <if test="jaundice != null  and jaundice != ''  ">jaundice = #{jaundice},</if>
+            <if test="albumin != null  and albumin != ''  ">albumin = #{albumin},</if>
+            <if test="edge != null  and edge != ''  ">edge = #{edge},</if>
+            <if test="irregular_liver != null  and irregular_liver != ''  ">irregular_liver = #{irregular_liver},</if>
+            <if test="hbc_anti != null  and hbc_anti != ''  ">hbc_anti = #{hbc_anti},</if>
+            <if test="hcv_anti != null  and hcv_anti != ''  ">hcv_anti = #{hcv_anti},</if>
+            <if test="palms != null  and palms != ''  ">palms = #{palms},</if>
+            <if test="hbeag != null  and hbeag != ''  ">hbeag = #{hbeag},</if>
+        </trim>
+        where carcinoma_id = #{carcinomaId}
+    </update>
+
+	<delete id="deleteCarcinomaById" parameterType="Integer">
+        delete from sys_carcinoma where carcinoma_id = #{carcinomaId}
+    </delete>
+	
+    <delete id="deleteCarcinomaByIds" parameterType="String">
+        delete from sys_carcinoma where carcinoma_id in 
+        <foreach item="carcinomaId" collection="array" open="(" separator="," close=")">
+            #{carcinomaId}
+        </foreach>
+    </delete>
+    
+</mapper>
