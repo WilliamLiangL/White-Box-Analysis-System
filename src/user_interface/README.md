@@ -1,8 +1,7 @@
 # Introduction
 * This is the user interface part of our project.
-* The objective of this part is to learn medical data by using Bayesian network model in R language.
-* Also, using machine learning results to find relationships in medical data.
-* Finally, it can output useful information for supporting visualization part.
+* This part is built based on RuoYi, an open-source management system project.
+* I modify some code and create a new function 'cacinoma检测' on this platform to help achieve goal.
 
 # RuoYi Environment Setting
 * Since it is based on a plat form called RuoYi, please download the original source code from https://gitee.com/y_project/RuoYi to start.
