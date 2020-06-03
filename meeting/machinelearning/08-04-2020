@@ -1,0 +1,27 @@
+# Attendees:
+## Supervisors:
+* Prof. Simon FONG
+
+## Members:
+* CHEANG WENG HEI, DANIEL
+* LIANG LIHENG, William
+
+# Finished items:
+* disscussed through wechat audio call
+* Tested 'Bayesian Network', 'Naive Bayesian Network', 'Logistic', 'Random Forest','Random Tree' in Weka.
+
+# Discussion:
+* Explained the modification in R program.
+* We discussed the bug existed in R program caused by the imbalance of the dataset.
+* Supervisor showed us how to make the datasest become balance and teach us more about Weka.
+* Showed the Weka result and discuss about how to determine wether the classifier is good to use.
+* Supervisors demostrated more on Weka and recommend a new software --'Rapidminer' for visualization.
+* Supervisors gave out some suggestions on the next step for the project that we can focus more on Weka with more operations.
+
+# Challenges:
+* We should learn more to make our own justification to choose a model that fit with the dataset.
+* Many numbers are shown in the results that we have to study more to understand each meaning.
+
+# Schedule:
+* We strt to have a plan for some interface for this project suggested by supervisors.
+* We will learn and try more on Weka to analysis more different algorithms rather than focus on the ones we tried.
