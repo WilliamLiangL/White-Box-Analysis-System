@@ -5,7 +5,7 @@
 * Finally, it can output useful information for supporting visualization part.
 
 # Installation
-* Since it is a R program, please download R form https://www.r-project.org/.
+* Since it is based on a plat form called RuoYi, please download the original source code from https://gitee.com/y_project/RuoYi to start.
 * This is developed based on R version 3.6.3, I suggest you use the same version.
 * Otherwise, I can't make sure that there will be errors in other versions.
 * For convenience, I also recommend that you use ide to run the program, you can download Rstudio from https://rstudio.com/.
