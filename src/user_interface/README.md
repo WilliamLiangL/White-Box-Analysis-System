@@ -14,7 +14,7 @@
 
 # Execution
 * After setting up the RuoYi, then run the carcinoma.sql, carcinoma_menu.sql, sys_dict_data.sql
-* Put the other 7 files on a appropriate place into the RuoYi project added from last part.
+* Put the other 9 files (5 java files, 1 xml file, 3 html files) on a appropriate place into the RuoYi project added from last part.
 * If the login page can be displayed correctly and you can log in successfully again, and the 'carcinoma' function is normal, indicating that the project has been successfully built
 
 # Contact information
