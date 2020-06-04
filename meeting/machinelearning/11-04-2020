@@ -1,0 +1,21 @@
+# Attendees:
+## Supervisors:
+* Prof. Shirley SIU
+* Prof. Simon FONG
+## Members:
+* CHEANG WENG HEI, DANIEL
+* LIANG LIHENG, William
+
+# Finished items:
+* Tried SMOTE in R and showed the results.
+
+# Discussion:
+* Supervisor said that SMOTE may be not a good measure to compare accuracy.
+* Supervisors suggested to compare balanced accuracy, F1, MCC, Kappa.
+* Supervisors provided a new resource about over sampling for imbalanced classification.
+
+# Challenges:
+* We should learn more from the new result.
+
+# Schedule:
+* We will start learning from the new resource and apply in R program.
